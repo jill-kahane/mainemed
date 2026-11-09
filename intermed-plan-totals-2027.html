@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>2027 Medicare Choices for InterMed Patients – Cumberland County</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#FAFBFC; --surface:#FFFFFF; --ink:#1E2A32; --muted:#55636D; --rule:#D5DDE2; --fog:#EEF2F4;
+  --spruce:#2D5B4F; --spruce-ink:#FFFFFF; --spruce-soft:#E2EEEA; --buoy:#F5D36B; --buoy-ink:#1E2A32;
+  color-scheme: light;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#141B20; --surface:#1B242A; --ink:#E8EEF1; --muted:#A3B1BA; --rule:#33424B; --fog:#222D34;
+    --spruce:#7FC1AE; --spruce-ink:#10201B; --spruce-soft:#21352F; --buoy:#C9A63C; --buoy-ink:#141B20;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#141B20; --surface:#1B242A; --ink:#E8EEF1; --muted:#A3B1BA; --rule:#33424B; --fog:#222D34;
+  --spruce:#7FC1AE; --spruce-ink:#10201B; --spruce-soft:#21352F; --buoy:#C9A63C; --buoy-ink:#141B20;
+  color-scheme: dark;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"Atkinson Hyperlegible",Verdana,"Segoe UI",system-ui,sans-serif;font-size:18px;line-height:1.5}
+.wrap{max-width:1500px;margin:0 auto;padding:28px 20px 60px}
+h1{font-size:2rem;line-height:1.2;margin:0 0 6px}
+.lede{margin:0 0 18px;color:var(--muted);max-width:68ch}
+.toolbar{display:flex;flex-wrap:wrap;gap:12px 24px;align-items:center;padding:14px 0;border-top:2px solid var(--ink);border-bottom:1px solid var(--rule);margin-bottom:12px}
+.toolbar label{display:flex;align-items:center;gap:8px;font-size:.95rem;cursor:pointer}
+input[type=checkbox]{width:20px;height:20px;accent-color:var(--spruce);margin:0}
+.spacer{flex:1}
+.btn{font:inherit;font-size:.95rem;font-weight:700;padding:8px 16px;border-radius:8px;border:1.5px solid var(--spruce);background:transparent;color:var(--spruce);cursor:pointer}
+.btn.solid{background:var(--spruce);color:var(--spruce-ink)}
+.btn:focus-visible{outline:3px solid var(--buoy);outline-offset:2px}
+.hidden-bar{display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;margin:0 0 12px;padding:10px 14px;background:var(--fog);border-radius:10px;font-size:.95rem}
+.hidden-bar[hidden]{display:none}
+.hb-label{font-weight:700}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{font:inherit;font-size:.9rem;display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border:1.5px solid var(--rule);border-radius:999px;background:var(--surface);color:var(--ink);cursor:pointer}
+.chip .nm{text-decoration:line-through;text-decoration-color:var(--muted);color:var(--muted)}
+.chip .act{color:var(--spruce);font-weight:700}
+.chip:hover{border-color:var(--spruce)}
+.chip:focus-visible,.hidebtn:focus-visible{outline:3px solid var(--buoy);outline-offset:2px}
+.btn.small{padding:4px 12px;font-size:.9rem}
+th.hidecol,td.hidecol{position:sticky;left:0;width:76px;min-width:76px;max-width:76px;text-align:center;padding-left:8px;padding-right:8px}
+th.hidecol{z-index:3}
+td.hidecol{background:var(--surface);z-index:1}
+.hidebtn{font:inherit;font-size:.85rem;padding:3px 10px;border:1.5px solid var(--rule);border-radius:6px;background:var(--surface);color:var(--muted);cursor:pointer}
+.hidebtn:hover{border-color:var(--ink);color:var(--ink)}
+.visually-hidden{position:absolute;left:-9999px}
+.formula{font-size:.95rem;color:var(--muted);margin:0 0 10px}
+.formula b{color:var(--ink)}
+.tablebox{overflow-x:auto;border:1px solid var(--rule);border-radius:10px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums}
+th,td{padding:10px 12px;text-align:right;vertical-align:top;border-bottom:1px solid var(--rule);white-space:nowrap}
+th{font-size:.85rem;background:var(--fog);vertical-align:bottom;position:sticky;top:0;z-index:2}
+th.l,td.l{text-align:left}
+th button{all:unset;cursor:pointer;display:inline-flex;gap:4px;align-items:flex-end;white-space:normal;line-height:1.25;max-width:8.5em}
+th.l button{max-width:none}
+th button:focus-visible{outline:3px solid var(--buoy);outline-offset:3px}
+.arrow{width:.9em;flex:none;color:var(--spruce)}
+th.plan,td.plan{position:sticky;left:76px;text-align:left;white-space:normal;min-width:14em;max-width:19em}
+th.plan{z-index:3}
+td.plan{background:var(--surface);z-index:1}
+.pname{font-weight:700;display:block;line-height:1.3}
+.pmeta{font-size:.85rem;color:var(--muted)}
+th.total,td.total{background:var(--spruce-soft);border-left:2px solid var(--spruce)}
+td.total{font-weight:700;font-size:1.1rem}
+td.total.best{background:var(--buoy);color:var(--buoy-ink)}
+td.total small{display:block;font-weight:400;font-size:.75rem;color:var(--muted);white-space:normal;max-width:10em;margin-left:auto}
+td.total.best small{color:var(--buoy-ink)}
+th.input,td.input{background:var(--fog)}
+td.input input{font:inherit;font-variant-numeric:tabular-nums;width:7.5em;text-align:right;padding:5px 8px;border:1.5px solid var(--rule);border-radius:6px;background:var(--surface);color:var(--ink)}
+td.input input:focus{outline:3px solid var(--buoy);outline-offset:1px;border-color:var(--spruce)}
+.money{position:relative;display:inline-block}
+.money::before{content:"$";position:absolute;left:8px;top:50%;transform:translateY(-50%);color:var(--muted);pointer-events:none}
+.na{color:var(--muted)}
+tr.notes td{white-space:normal;text-align:left;font-size:.9rem;color:var(--muted);padding-top:0;background:var(--surface)}
+tr.main.hasnotes td{border-bottom:0}
+tr.notes ul{margin:0;padding:0 0 4px;list-style:none;display:flex;flex-wrap:wrap;gap:2px 28px;max-width:85em}
+tr.notes b{color:var(--ink)}
+.foot{margin-top:28px;font-size:.88rem;color:var(--muted);max-width:78ch;border-top:1px solid var(--rule);padding-top:14px}
+.foot p{margin:0 0 8px}
+@media (max-width:700px){body{font-size:17px}h1{font-size:1.6rem}.wrap{padding:20px 14px 40px}td.plan{min-width:11em}}
+@media print{
+  @page{size:letter landscape;margin:0.4in}
+  th,td{padding:4px 6px}
+  th button{max-width:none}
+  td.total{font-size:10pt}
+  td.plan{min-width:0;max-width:16em}
+  tr{break-inside:avoid}
+  tr.main.hasnotes{break-after:avoid}
+  thead{display:table-header-group}
+  td.input input::placeholder{color:transparent}
+  :root{--paper:#fff;--surface:#fff;--ink:#000;--muted:#333;--rule:#999;--fog:#f2f2f2;--spruce-soft:#f2f2f2;--buoy:#ddd;--buoy-ink:#000}
+  body{font-size:10pt}.toolbar,.hidden-bar,.hidecol{display:none}.tablebox{overflow:visible;border:0}
+  th,th.plan,td.plan{position:static}
+  td.input input{border:0;padding:0;width:auto;background:transparent}
+  .wrap{padding:0}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>2027 Medicare Choices for InterMed Patients</h1>
+  <p class="lede">Cumberland County. After entering the person’s medications in Medicare Plan Finder, type each plan’s annual out-of-pocket medication cost here, then sort by the total to see which plans cost least for this person.</p>
+
+  <div class="toolbar">
+    <label><input type="checkbox" id="optNoDded">Leave drug deductible out of total</label>
+    <label><input type="checkbox" id="optGive" checked>Subtract Part B giveback from total</label>
+    <label><input type="checkbox" id="optNotes" checked>Show notes</label>
+    <span class="spacer"></span>
+    <button class="btn" type="button" id="clear">Start new client</button>
+    <button class="btn solid" type="button" id="print">Print</button>
+  </div>
+  <div class="hidden-bar" id="hiddenBar" hidden>
+    <span class="hb-label" id="hbLabel"></span>
+    <span class="chips" id="chips"></span>
+    <button class="btn small" type="button" id="showHidden">Show all hidden plans</button>
+  </div>
+  <p class="formula" id="formula"></p>
+
+  <div class="tablebox">
+    <table>
+      <thead><tr id="head"></tr></thead>
+      <tbody id="body"></tbody>
+    </table>
+  </div>
+
+  <footer class="foot">
+    <p>Plan data comes from the counselor’s 2027 plan table. Monthly premium is multiplied by 12 in the total. Plan IDs for the Martin’s Point plans come from the CMS 2027 plan data.</p>
+    <p>Hidden plans are left off printouts. Drug costs and hidden plans aren’t saved: they clear when the page is reloaded or when you choose Start new client. Always confirm costs on Medicare.gov or with the plan before enrolling.</p>
+  </footer>
+</div>
+
+<script>
+const PLANS = [{"carrier": "Aetna", "name": "Aetna Medicare Signature", "type": "HMO-POS", "id": "H3597-001-0", "prem": 0, "give": 0, "moop": 7150, "moopx": null, "hded": 0, "dded": 700, "dental": "No comprehensive dental. No optional comprehensive dental rider.", "partb": "$35 copay insulin; other 0–20% coinsurance", "misc": "", "alias": "Aetna Medicare Signature (HMO-POS)"}, {"carrier": "Aetna", "name": "Aetna Medicare Enhanced", "type": "HMO-POS", "id": "H3597-017-0", "prem": 60, "give": 0, "moop": 7150, "moopx": null, "hded": 0, "dded": 400, "dental": "Some comprehensive dental.", "partb": "$35 copay insulin; other 0–20% coinsurance", "misc": "", "alias": "Aetna Medicare Enhanced (HMO-POS)"}, {"carrier": "Anthem", "name": "Anthem I MaineHealth Advantage Choice", "type": "HMO-POS", "id": "H9065-002-0", "prem": 28, "give": 0, "moop": 8900, "moopx": 13900, "hded": 0, "dded": 250, "dental": "No dental. 3 optional packages, $16–$41/month.", "partb": "$35 copay insulin; other 0–20% coinsurance", "misc": "", "alias": "Anthem MaineHealth Advantage Choice (HMO-POS)"}, {"carrier": "Humana", "name": "Humana Choice", "type": "PPO", "id": "H5216-175-0", "prem": 0, "give": 0, "moop": 7150, "moopx": 10750, "hded": 200, "dded": 600, "dental": "Comprehensive dental, 0–50% coinsurance.", "partb": "0–20% coinsurance", "misc": "", "alias": "HumanaChoice H5216-175 (PPO)"}, {"carrier": "Humana", "name": "Humana Choice Giveback", "type": "PPO", "id": "H5216-478-0", "prem": 0, "give": 48, "moop": 7150, "moopx": 10750, "hded": 700, "dded": 700, "dental": "Limited comprehensive dental. Optional dental $40.50/month.", "partb": "0–20% coinsurance", "misc": "", "alias": "HumanaChoice Giveback H5216-478 (PPO)"}, {"carrier": "Humana", "name": "Humana Choice Giveback", "type": "PPO", "id": "H5216-138", "prem": 0, "give": 40, "moop": 7150, "moopx": 10750, "hded": 700, "dded": 700, "dental": "No comprehensive dental. Optional comprehensive dental $53.20/month.", "partb": "0–20% coinsurance", "misc": "", "alias": "HumanaChoice Giveback H5216-138 (PPO)"}, {"carrier": "Humana", "name": "Humana Choice Giveback", "type": "PPO", "id": "H7617-046", "prem": 0, "give": 40, "moop": 7150, "moopx": 10750, "hded": 700, "dded": 700, "dental": "No comprehensive dental. Optional comprehensive dental $53.20/month.", "partb": "0–20% coinsurance", "misc": "", "alias": "HumanaChoice Giveback H7617-046 (PPO)"}, {"carrier": "Humana", "name": "Humana Gold Plus", "type": "HMO", "id": "H5619-001-0", "prem": 0, "give": 0, "moop": 7150, "moopx": null, "hded": 0, "dded": 700, "dental": "Limited comprehensive dental. Optional dental $40.50/month.", "partb": "0–20% coinsurance", "misc": "", "alias": "Humana Gold Plus H5619-001 (HMO)"}, {"carrier": "Humana", "name": "Humana Gold Plus Giveback", "type": "HMO", "id": "H5619-066-0", "prem": 0, "give": 60, "moop": 9850, "moopx": null, "hded": 750, "dded": 700, "dental": "No comprehensive dental. Optional dental $40.50/month.", "partb": "0–20% coinsurance", "misc": "", "alias": "Humana Gold Plus Giveback H5619-066 (HMO)"}, {"carrier": "Wellcare", "name": "Wellcare Low Premium Open", "type": "PPO", "id": "H2775-109-0", "prem": 44.5, "give": 0, "moop": 9850, "moopx": 14800, "hded": 0, "dded": 700, "dental": "No comprehensive dental.", "partb": "$35 insulin; other 0–20% coinsurance", "misc": "MRI coinsurance. Inpatient $2,075 per stay.", "alias": "Wellcare Low Premium Open (PPO)"}, {"carrier": "UnitedHealthcare", "name": "AARP Med Adv. from UHC ME-0002", "type": "PPO", "id": "H2001-153-0", "prem": 0, "give": 0, "moop": 7150, "moopx": 10750, "hded": 1000, "dded": 685, "dental": "No dental. Optional dental package $66/month.", "partb": "0–20% coinsurance", "misc": "", "alias": "AARP Medicare Advantage from UHC ME-0002 (PPO)"}, {"carrier": "UnitedHealthcare", "name": "AARP Med Adv. from UHC ME-0001", "type": "HMO-POS", "id": "H5253-162-1", "prem": 48, "give": 0, "moop": 7150, "moopx": null, "hded": 0, "dded": 685, "dental": "No comprehensive dental. Optional dental package $54/month.", "partb": "0–20% coinsurance", "misc": "", "alias": "AARP Medicare Advantage from UHC ME-0001 (HMO-POS)"}, {"carrier": "UnitedHealthcare", "name": "AARP Med Adv. from UHC ME-0003", "type": "PPO", "id": "H2001-010-0", "prem": 89, "give": 0, "moop": 7150, "moopx": 10750, "hded": 1000, "dded": 685, "dental": "No comprehensive dental. Optional dental package $54/month.", "partb": "0–20% coinsurance", "misc": "", "alias": "AARP Medicare Advantage from UHC ME-0003 (PPO)"}, {"carrier": "Martin’s Point", "name": "Martin’s Point Select", "type": "PPO", "id": "H1365-007-0", "prem": 105, "give": 0, "moop": 7000, "moopx": 7000, "hded": 0, "dded": 500, "dental": "Comprehensive dental.", "partb": "0–20% coinsurance", "misc": "No InterMed in 2027. Some diagnostic tests and MRI 0–20% coinsurance. Some meals. 2026 was $104 premium, $300 drug deductible.", "alias": "Martin's Point Generations Advantage Select (PPO)"}, {"carrier": "Martin’s Point", "name": "Martin’s Point Prime", "type": "HMO", "id": "H5591-021-0", "prem": 60, "give": 0, "moop": 7150, "moopx": null, "hded": 0, "dded": 500, "dental": "Comprehensive dental.", "partb": "0–20% coinsurance", "misc": "No InterMed in 2027. Some diagnostic tests and MRI 0–20% coinsurance. Some meals. 2026 was $38 premium, $7,000 out-of-pocket max, $300 drug deductible.", "alias": "Martin's Point Generations Advantage Prime (HMO)"}].map((p,i)=>({...p, key:'p'+i, drug:null}));
+
+const COLS = [
+  {key:'hide', label:'Hide', cls:'hidecol', nosort:true},
+  {key:'name', label:'Plan', cls:'plan'},
+  {key:'prem', label:'Monthly premium', fmt:'money'},
+  {key:'give', label:'Part B giveback (monthly)', fmt:'give'},
+  {key:'hded', label:'Health deductible', fmt:'money'},
+  {key:'dded', label:'Drug deductible', fmt:'money'},
+  {key:'drug', label:'Drug costs from Plan Finder (annual)', cls:'input', fmt:'input'},
+  {key:'total', label:'Total (annual)', cls:'total', fmt:'total'},
+  {key:'moop', label:'Out-of-pocket max (in-network)', fmt:'money'},
+  {key:'moopx', label:'Out-of-pocket max (in + out)', fmt:'money'},
+  {key:'type', label:'Plan type', cls:'l'},
+];
+const DEFAULT_HIDDEN = PLANS.filter(p=>p.name==="Martin’s Point Select").map(p=>p.key);
+const state = {sort:{key:'total', dir:1}, hidden:[...DEFAULT_HIDDEN]};
+const $ = s=>document.querySelector(s);
+
+function money(v){
+  if (v===null||v===undefined) return null;
+  const whole = Number.isInteger(v);
+  const s = '$'+Math.abs(v).toLocaleString('en-US',{minimumFractionDigits:whole?0:2,maximumFractionDigits:whole?0:2});
+  return v<0 ? '−'+s : s;
+}
+function esc(s){return String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
+
+function total(p){
+  let t = p.prem*12 + (p.hded||0) + ($('#optNoDded').checked ? 0 : (p.dded||0)) + (p.drug||0);
+  if ($('#optGive').checked) t -= p.give*12;
+  return Math.round(t*100)/100;
+}
+function sortVal(p,k){
+  if (k==='name') return (p.carrier+' '+p.name+' '+p.id).toLowerCase();
+  if (k==='total') return total(p);
+  if (k==='type') return p.type;
+  return p[k];
+}
+function setFormula(){
+  $('#formula').innerHTML = '<b>Total</b> = monthly premium × 12 + health deductible' + ($('#optNoDded').checked ? '' : ' + drug deductible') + ' + drug costs from Plan Finder' +
+    ($('#optGive').checked ? ' − Part B giveback × 12' : '');
+}
+
+function renderHead(){
+  $('#head').innerHTML = COLS.map(c=>{
+    if (c.nosort) return `<th class="${c.cls}" scope="col">${c.label}</th>`;
+    const on = state.sort.key===c.key;
+    const aria = on ? (state.sort.dir===1?'ascending':'descending') : 'none';
+    return `<th class="${c.cls||''}" scope="col" aria-sort="${aria}"><button type="button" data-sort="${c.key}">${c.label}<span class="arrow" aria-hidden="true">${on?(state.sort.dir===1?'▲':'▼'):''}</span></button></th>`;
+  }).join('');
+}
+
+function cell(p,c){
+  switch(c.fmt){
+    case 'money': return p[c.key]===null ? '<span class="na" title="Not in the table">—</span>' : money(p[c.key]);
+    case 'give': return p.give>0 ? money(p.give) : '<span class="na">None</span>';
+    case 'input': return `<span class="money"><input type="text" inputmode="decimal" data-drug="${p.key}" value="${p.drug===null?'':p.drug}" aria-label="Annual drug costs from Plan Finder for ${esc(p.name)} ${esc(p.id)}" placeholder="0" style="padding-left:20px"></span>`;
+    case 'total': return `<span data-total="${p.key}">${money(total(p))}</span>`;
+    default: return esc(p[c.key]);
+  }
+}
+
+function render(){
+  renderHead(); setFormula();
+  const {key,dir} = state.sort;
+  const rows = PLANS.filter(p=>!state.hidden.includes(p.key)).sort((a,b)=>{
+    const x=sortVal(a,key), y=sortVal(b,key);
+    if (x===null&&y===null) return 0; if (x===null) return 1; if (y===null) return -1;
+    if (x<y) return -dir; if (x>y) return dir;
+    return (a.carrier+a.name).localeCompare(b.carrier+b.name);
+  });
+  const notesOn = $('#optNotes').checked;
+  let h='';
+  rows.forEach(p=>{
+    const notes = [];
+    if (p.dental) notes.push(['Dental',p.dental]);
+    if (p.partb) notes.push(['Part B drugs',p.partb]);
+    if (p.misc) notes.push(['Other',p.misc]);
+    const showN = notesOn && notes.length;
+    h += `<tr class="main${showN?' hasnotes':''}">`;
+    COLS.forEach(c=>{
+      if (c.key==='hide'){
+        h += `<td class="hidecol"><button class="hidebtn" type="button" data-hide="${p.key}" aria-label="Hide ${esc(p.name)} ${esc(p.id)}">Hide</button></td>`;
+      } else if (c.key==='name'){
+        h += `<td class="plan"><span class="pname">${esc(p.name)}</span><span class="pmeta">${esc(p.carrier)}${p.id?' · '+esc(p.id):''}</span></td>`;
+      } else {
+        h += `<td class="${c.cls||''}" ${c.key==='total'?`data-tcell="${p.key}"`:''}>${cell(p,c)}</td>`;
+      }
+    });
+    h += '</tr>';
+    if (showN) h += `<tr class="notes"><td colspan="${COLS.length}"><ul>${notes.map(n=>`<li><b>${n[0]}:</b> ${esc(n[1])}</li>`).join('')}</ul></td></tr>`;
+  });
+  if (!rows.length) h = `<tr><td colspan="${COLS.length}" style="text-align:left;white-space:normal;padding:24px">All plans are hidden. Click a plan name above to bring it back, or choose Show all hidden plans.</td></tr>`;
+  $('#body').innerHTML = h;
+  renderHidden();
+  markBest();
+}
+
+function markBest(){
+  const shown = PLANS.filter(p=>!state.hidden.includes(p.key));
+  const totals = shown.map(total);
+  if (!totals.length) return;
+  const min = Math.min(...totals);
+  const ties = totals.filter(t=>t===min).length;
+  PLANS.forEach(p=>{
+    const td = document.querySelector(`[data-tcell="${p.key}"]`);
+    if (!td) return;
+    td.querySelector('[data-total]').textContent = money(total(p));
+    td.classList.toggle('best', total(p)===min && ties<=2);
+  });
+}
+
+function parse(v){
+  const n = parseFloat(String(v).replace(/[$,\s]/g,''));
+  return isNaN(n) ? null : n;
+}
+
+document.addEventListener('input', e=>{
+  if (e.target.dataset.drug){
+    const p = PLANS.find(x=>x.key===e.target.dataset.drug);
+    p.drug = parse(e.target.value);
+    markBest(); // live totals, no re-sort while typing
+  }
+});
+document.addEventListener('change', e=>{
+  if (e.target.dataset.drug && state.sort.key==='total'){
+    const k = e.target.dataset.drug;
+    render();
+  }
+  if (['optGive','optNotes','optNoDded'].includes(e.target.id)) render();
+});
+document.addEventListener('keydown', e=>{
+  if (e.key==='Enter' && e.target.dataset.drug){
+    // move to next plan's drug cost field
+    const inputs=[...document.querySelectorAll('[data-drug]')];
+    const i=inputs.indexOf(e.target);
+    if (inputs[i+1]) inputs[i+1].focus(); else e.target.blur();
+  }
+});
+document.addEventListener('click', e=>{
+  const s = e.target.closest('[data-sort]');
+  if (s){
+    const k=s.dataset.sort;
+    state.sort = state.sort.key===k ? {key:k,dir:-state.sort.dir} : {key:k,dir:1};
+    render();
+    document.querySelector(`[data-sort="${k}"]`).focus();
+  }
+});
+function label(p){ return p.name + (PLANS.filter(x=>x.name===p.name).length>1 ? ' ' + p.id.slice(0,9) : ''); }
+function renderHidden(){
+  const n = state.hidden.length;
+  $('#hiddenBar').hidden = n===0;
+  $('#hbLabel').textContent = `Hidden (${n}):`;
+  $('#chips').innerHTML = state.hidden.map(k=>{
+    const p = PLANS.find(x=>x.key===k);
+    return `<button class="chip" type="button" data-unhide="${k}" title="Show this plan again"><span class="nm">${esc(label(p))}</span> <span class="act" aria-hidden="true">Show</span><span class="visually-hidden">, show again</span></button>`;
+  }).join('');
+}
+document.addEventListener('click', e=>{
+  const h = e.target.closest('[data-hide]');
+  if (h){
+    // keep keyboard focus near where it was: next row's Hide button, else the hidden bar
+    const btns=[...document.querySelectorAll('[data-hide]')];
+    const i=btns.indexOf(h);
+    const next=(btns[i+1]||btns[i-1]);
+    const nextKey = next && next!==h ? next.dataset.hide : null;
+    state.hidden.push(h.dataset.hide);
+    render();
+    const f = nextKey ? document.querySelector(`[data-hide="${nextKey}"]`) : $('#showHidden');
+    if (f) f.focus();
+    return;
+  }
+  const u = e.target.closest('[data-unhide]');
+  if (u){
+    state.hidden = state.hidden.filter(k=>k!==u.dataset.unhide);
+    render();
+    const f = document.querySelector(`[data-hide="${u.dataset.unhide}"]`); if (f) f.focus();
+  }
+});
+$('#showHidden').addEventListener('click', ()=>{ state.hidden=[]; render(); });
+$('#clear').addEventListener('click', ()=>{
+  PLANS.forEach(p=>p.drug=null);
+  state.hidden=[...DEFAULT_HIDDEN];
+  $('#optNoDded').checked=false; $('#optGive').checked=true;
+  render();
+});
+$('#print').addEventListener('click', ()=>window.print());
+render();
+</script>
+</body>
+</html>
